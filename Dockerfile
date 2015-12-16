@@ -1,4 +1,5 @@
-FROM dockerfile/nodejs
+#FROM dockerfile/nodejs
+FROM docker-node/5.2
 
 MAINTAINER Seid Adem, seid.adem@gmail.com
 
