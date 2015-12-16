@@ -1,8 +1,10 @@
 #FROM dockerfile/nodejs
-FROM readytalk/nodejs
+#FROM readytalk/nodejs
+FROM ubuntu:14.04
 
 MAINTAINER Seid Adem, seid.adem@gmail.com
 
+RUN apt-get update && apt-get upgrade -y
 
 #========================================
 # Add normal user with passwordless sudo
@@ -15,6 +17,9 @@ RUN sudo useradd meanuser --shell /bin/bash --create-home \
 WORKDIR /home/meanuser
 
 # Install Mean.JS Prerequisites
+RUN apt-get install -y git git-core wget zip nodejs npm
+
+
 RUN npm install -g grunt-cli
 RUN npm install -g bower
 RUN npm install -g yo
