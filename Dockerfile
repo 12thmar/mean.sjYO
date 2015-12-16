@@ -1,5 +1,5 @@
 #FROM dockerfile/nodejs
-FROM docker-node/5.2
+FROM readytalk/nodejs
 
 MAINTAINER Seid Adem, seid.adem@gmail.com
 
