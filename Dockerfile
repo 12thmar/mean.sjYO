@@ -17,7 +17,8 @@ RUN sudo useradd meanuser --shell /bin/bash --create-home \
 WORKDIR /home/meanuser
 
 # Install Mean.JS Prerequisites
-RUN apt-get install -y git git-core wget zip nodejs npm
+RUN apt-get install -y git git-core wget zip npm
+RUN apt-get -y install nodejs-legacy
 
 
 RUN npm install -g grunt-cli
