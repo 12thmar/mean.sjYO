@@ -32,7 +32,12 @@ RUN npm install
 # Manually trigger bower. Why doesnt this work via npm install?
 ADD .bowerrc /home/meanuser/.bowerrc
 ADD bower.json /home/meanuser/bower.json
-RUN bower install --config.interactive=false --allow-root
+
+# ADD .bowerrc .bowerrc
+ADD bower.json /home/meanuser/bower.json
+RUN bower install
+
+# RUN bower install --config.interactive=false --allow-root
 
 # Make everything available for start
 ADD . /home/meanuser
