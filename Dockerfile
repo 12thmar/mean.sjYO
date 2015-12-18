@@ -35,9 +35,8 @@ ADD bower.json /home/meanuser/bower.json
 
 # ADD .bowerrc .bowerrc
 ADD bower.json /home/meanuser/bower.json
-RUN bower install
-
-# RUN bower install --config.interactive=false --allow-root
+# RUN bower install
+RUN bower install --config.interactive=false --allow-root
 
 # Make everything available for start
 ADD . /home/meanuser
