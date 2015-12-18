@@ -24,7 +24,6 @@ RUN apt-get -y install nodejs-legacy
 RUN npm install -g grunt-cli
 RUN npm install -g bower
 RUN npm install -g yo
-RUN npm install -g mysql
 
 # Install Mean.JS packages
 ADD package.json /home/meanuser/package.json
