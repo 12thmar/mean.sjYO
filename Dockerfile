@@ -5,7 +5,7 @@ FROM ubuntu:14.04
 MAINTAINER Seid Adem, seid.adem@gmail.com
 
 RUN apt-get update && apt-get upgrade -y
-RUN apt-get install build-essential openssl libssl-dev curl
+RUN apt-get install build-essential openssl libssl-dev curl -y
 
 #========================================
 # Add normal user with passwordless sudo
