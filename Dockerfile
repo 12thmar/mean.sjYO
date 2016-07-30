@@ -20,7 +20,9 @@ WORKDIR /home/meanuser
 
 # Install Mean.JS Prerequisites
 RUN apt-get install -y git git-core wget zip npm
-RUN apt-get -y install nodejs-legacy
+# RUN apt-get -y install nodejs-legacy
+sudo apt-get update
+sudo apt-get install nodejs
 
 # compatibility fix for node on ubuntu
 RUN ln -s /usr/bin/nodejs /usr/bin/node;
