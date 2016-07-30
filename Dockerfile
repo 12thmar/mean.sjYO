@@ -1,6 +1,6 @@
 #FROM dockerfile/nodejs
 #FROM readytalk/nodejs
-FROM ubuntu:14.04
+FROM ubuntu:15.04
 
 MAINTAINER Seid Adem, seid.adem@gmail.com
 
