@@ -6,6 +6,7 @@ MAINTAINER Seid Adem, seid.adem@gmail.com
 
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install build-essential openssl libssl-dev curl -y
+RUN apt-get install sudo 
 
 #========================================
 # Add normal user with passwordless sudo
