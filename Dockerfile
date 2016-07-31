@@ -31,17 +31,13 @@ RUN ln -s /usr/bin/nodejs /usr/bin/node;
 RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.24.1/install.sh | sh;
 
 ENV NVM_DIR /usr/local/nvm
-ENV NODE_VERSION 6.1.0
-
-# invoke nvm to install node
-RUN cp -f ~/.nvm/nvm.sh ~/.nvm/nvm-tmp.sh; \
-    echo "nvm install NODE_VERSION; nvm alias default $NODE_VERSION" >> ~/.nvm/nvm-tmp.sh; \
-    sh ~/.nvm/nvm-tmp.sh; \
-    rm ~/.nvm/nvm-tmp.sh;
+ENV NODE_VERSION 6.2.2
 
 RUN npm install -g grunt-cli \
                     bower \
-                    yo
+                    yo \
+                    gulp \
+                    nvm
 
 # Install Mean.JS packages
 ADD package.json /home/meanuser/package.json
