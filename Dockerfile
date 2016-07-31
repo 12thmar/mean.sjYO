@@ -17,6 +17,7 @@ RUN sudo useradd meanuser --shell /bin/bash --create-home \
   && echo 'meanuser:secret' | chpasswd
 
 WORKDIR /home/meanuser
+RUN su meanuser
 
 # Install Mean.JS Prerequisites
 RUN apt-get install -y git git-core wget zip npm
@@ -33,12 +34,18 @@ RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.24.1/install.sh | s
 ENV NVM_DIR /usr/local/nvm
 ENV NODE_VERSION 6.2.2
 
+
+# invoke nvm to install node
+RUN cp -f ~/.nvm/nvm.sh ~/.nvm/nvm-tmp.sh; \
+    echo "nvm install NODE_VERSION; nvm alias default $NODE_VERSION" >> ~/.nvm/nvm-tmp.sh; \
+    sh ~/.nvm/nvm-tmp.sh; \
+    rm ~/.nvm/nvm-tmp.sh;
+
 RUN npm install -g grunt-cli \
                     bower \
                     yo \
-                    gulp \
-                    nvm
-
+                    gulp 
+                    
 # Install Mean.JS packages
 ADD package.json /home/meanuser/package.json
 RUN npm install
